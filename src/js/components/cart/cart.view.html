@@ -1,0 +1,40 @@
+<h1>Cart View</h1>
+<div class="container">
+  {{cart}}
+  <br>
+  {{total}}
+  <div class="row" ng-repeat="cart in CartView">
+    <div class="col-sm-4"><a href="#" class=""><img src="{{cart.imageUrl}}" class="img-responsive"></a>
+    </div>
+    <div class="col-sm-8">
+      <h3 class="title">{{cart.name}}</h3>
+      <p><span class="glyphicon glyphicon-info-sign"></span> Ingredients</p>
+      <p>{{cart.ingredients}}</p>
+      <p><span class="glyphicon glyphicon-info-sign"></span> CaffeineScale</p>
+      <p>{{cart.caffeineScale}}</p>
+      <p><span class="glyphicon glyphicon-info-sign"></span> Price</p>
+      <p>{{cart.price}}</p>
+      <p><span class="glyphicon glyphicon-info-sign"></span> InStock</p>
+      <p>{{cart.inStock}}</p>
+      <p><span class="glyphicon glyphicon-info-sign"></span> Rating</p>
+      <p>{{cart.rating}}</p>
+      <p><span class="glyphicon glyphicon-info-sign"></span> Quantity</p>
+      <p>{{cart.quantity}}</p>
+      <p><span class="glyphicon glyphicon-info-sign"></span> Categories</p>
+      <p><span ng-repeat="cat in cart.categories">{{cat}} &nbsp &nbsp &nbsp</span></p>
+      <!-- <form name="cartForm" ng-submit="mainCtrl.submitTea(cart._id, quantity, cart.price)">
+        <select class="form-control" name="quantitiy" ng-model="quantity.number">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <button class="btn btn-sm btn-primary" data-id="{{cart.id}}">Add to Bag</button>
+      </form> -->
+
+    </div>
+  </div>
+  <hr>
+
+</div>
