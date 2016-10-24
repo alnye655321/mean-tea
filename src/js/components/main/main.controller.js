@@ -6,7 +6,7 @@
     .module('myApp.components.main', [])
     .controller('mainController', mainController);
 
-  mainController.$inject = ['$scope','$rootScope','teaService','$filter'];
+  mainController.$inject = ['$scope','$rootScope','teaService'];
 
   function mainController($scope, $rootScope, teaService) {
     $scope.filterVar = 'name';
@@ -22,13 +22,16 @@
 
     this.update = function() {
       console.log($scope.item.category);
-      teaService.updateFilterView($scope.item.category);
+      $rootScope.teas = teaService.updateFilterView($scope.item.category);
     }
 //http://www.w3schools.com/angular/angular_filters.asp  for search as well
     this.newFilter = function() {
-      console.log('DFsdgf');
       $scope.filterVar = 'price';
 
+    }
+
+    this.clear = function() {
+      $rootScope.teas = $rootScope.teasOriginal;
     }
 
   }
