@@ -2,7 +2,7 @@
 <div class="container">
   <!-- {{cart}} -->
   <br>
-  Total: ${{total}}
+  <h3>Total: ${{total}}</h3>
   <div class="row" ng-repeat="cart in CartView">
     <div class="col-sm-4"><a href="#" class=""><img src="{{cart.imageUrl}}" class="img-responsive"></a>
     </div>
@@ -18,21 +18,15 @@
       <p>{{cart.inStock}}</p>
       <p><span class="glyphicon glyphicon-info-sign"></span> Rating</p>
       <p>{{cart.rating}}</p>
+
       <p><span class="glyphicon glyphicon-info-sign"></span> Quantity</p>
-      <p>{{cart.quantity}}</p>
+      <form name="newQuanForm" ng-submit="cartCtrl.updateQuan(quan.new, cart.quantity, cart._id, cart.price)">
+      <input type="number" name="quan" ng-model="quan.new" value="{{cart.quantity}}"></input>
+      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+    </form>
+      <!-- <p>{{cart.quantity}}</p> -->
       <p><span class="glyphicon glyphicon-info-sign"></span> Categories</p>
       <p><span ng-repeat="cat in cart.categories">{{cat}} &nbsp &nbsp &nbsp</span></p>
-      <!-- <form name="cartForm" ng-submit="mainCtrl.submitTea(cart._id, quantity, cart.price)">
-        <select class="form-control" name="quantitiy" ng-model="quantity.number">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <button class="btn btn-sm btn-primary" data-id="{{cart.id}}">Add to Bag</button>
-      </form> -->
-
     </div>
   </div>
   <hr>

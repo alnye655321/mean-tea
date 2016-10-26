@@ -3,12 +3,13 @@
 <div class="container">
   <!-- {{cart}} -->
   <br>
-  Total: ${{total}}
+  <h3>Total: ${{total}}</h3>
   <br>
-  <!-- {{CartView}} -->
+
   <!-- view controls row -->
   <div class="row">
-  <select ng-options="item.category for item in categories" ng-model="item" ng-change="mainCtrl.update()"></select>
+    <label for="categoryFilt">Category Filter</label>
+  <select ng-options="item.category for item in categories" id="categoryFilt" ng-model="item" ng-change="mainCtrl.update()"></select>
   </div>
   <div class="row">
     <br>
@@ -16,11 +17,15 @@
   </div>
   <div class="row">
     <br>
+  <input type="text" ng-model="searchTerm" ng-change="mainCtrl.searchChange(searchTerm)">
+  </div>
+  <div class="row">
+    <br>
   <button name="button" ng-click="mainCtrl.clear()">Clear Filters</button>
   </div>
 
   <!-- tea displays -->
-  <div class="row" ng-repeat="tea in teas | orderBy:filterVar">
+  <div class="row" ng-repeat="tea in teas | orderBy:filterVar | filter : searchTerm">
 
     <div class="col-sm-4"><a href="/#/" class=""><img src="{{tea.imageUrl}}" class="img-responsive"></a>
     </div>

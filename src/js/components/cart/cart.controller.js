@@ -6,26 +6,16 @@
     .module('myApp.components.cart', [])
     .controller('cartController', cartController);
 
-  cartController.$inject = ['$scope', '$rootScope', '$location'];
+  cartController.$inject = ['$scope', '$rootScope', '$location','cartService'];
 
   console.log('sanity check!');
 
-  function cartController($scope, $rootScope, $location) {
+  function cartController($scope, $rootScope, $location, cartService) {
     /*jshint validthis: true */
 
-    // this.addKitten = function() {
-    //   /*jshint validthis: true */
-    //   $rootScope.kittens.push(
-    //     {
-    //       name: $scope.kittenName,
-    //       bio: $scope.kittenBio,
-    //       URL: $scope.kittenURL
-    //     }
-    //   );
-    //   $location.path('/#/');
-    //
-    // };
-    
+    this.updateQuan = function(newQuantity, oldQuantity, id, price) {
+      /*jshint validthis: true */
+      $rootScope.CartView = cartService.addCart(newQuantity, oldQuantity, id, price);
+    };
   }
-
 })();

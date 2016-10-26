@@ -10,6 +10,7 @@
       'myApp.config',
       'myApp.components.main',
       'tea',
+      'cart',
       'myApp.components.cart'
     ]);
 

@@ -9,7 +9,6 @@
       $rootScope.total = 0;
       $rootScope.cart = [];
       $rootScope.filterView = [];
-      $rootScope.categories = [{id: 0, category: 'dark'},{id: 1, category: 'cold'},{id: 2, category: 'awesome'},{id: 3, category: 'dry'},{id: 4, category: 'hot'},{id: 5, category: 'summer'},{id: 6, category: 'winter'},{id: 7, category: 'dry'}];
       $rootScope.teasOriginal = [
     {
         "_id": "55c8ee82152165d244b98300",
@@ -134,6 +133,7 @@
     }
 ];
   $rootScope.teas = $rootScope.teasOriginal;
+  $rootScope.categories = [{id: 0, category: 'dark'},{id: 1, category: 'cold'},{id: 2, category: 'awesome'},{id: 3, category: 'dry'},{id: 4, category: 'hot'},{id: 5, category: 'summer'},{id: 6, category: 'winter'},{id: 7, category: 'dry'}];
 
     })
 
